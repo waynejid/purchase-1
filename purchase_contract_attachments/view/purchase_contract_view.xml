@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="purchase_contract_attachments">
+            <field name="name">purchase.contract.attachments</field>
+            <field name="model">sale.subscription</field>
+            <field name="inherit_id" ref="sale_contract.sale_subscription_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Attachments -->
+                <xpath expr="//page[@id='settings']" position="after">
+                    <page string="Attachments">
+                        <field name="attachments_ids" widget="many2many_binary" string="Attach a file"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
