@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <record id="product_normal_form_view_price_history_button_action" model="ir.actions.act_window">
+            <field name="name">Product Cost History</field>
+            <field name="res_model">product.price.history</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('product_id.id', '=', context.get('product_id'))]</field>
+        </record>
+
+        <record id="product_normal_form_view_price_history_menu_button_action" model="ir.actions.act_window">
+            <field name="name">Products Cost History</field>
+            <field name="res_model">product.price.history</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="product_normal_form_view_price_history_button">
+            <field name="name">product_normal_form_view_price_history_button</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//button[@name='toggle_active']" position="before">
+                        <button class="oe_stat_button" name="%(product_normal_form_view_price_history_button_action)d" type="action" icon="fa-history" context="{'product_id': id}">
+                            <field string="Cost History" name="price_history_count" widget="statinfo" modifiers="{'readonly': true}"/>
+                        </button>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <menuitem id="menu_purchase_product_price_history"
+            action="product_normal_form_view_price_history_menu_button_action" parent="purchase.menu_procurement_management"
+            sequence="22"/>
+
+    </data>
+</openerp>
