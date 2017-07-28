@@ -23,6 +23,7 @@
 
     'data': [
         'views/product_template.xml',
-        'views/product_cost_history.xml'
+        'views/product_cost_history.xml',
+        'security/ir.model.access.csv'
     ],
 }
