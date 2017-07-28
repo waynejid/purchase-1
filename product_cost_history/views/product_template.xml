@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<openerp>
     <data>
         <record id="product_template_cost_history_action" model="ir.actions.act_window">
-            <field name="name">Cost History</field>
+            <field name="name">Product Cost History</field>
             <field name="res_model">product.cost.history</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree</field>
             <field name="domain">[('product_id.product_tmpl_id.id', '=', context.get('product_tmpl_id'))]</field>
         </record>
 
-        <record id="view_product_template_form_publisher" model="ir.ui.view">
-            <field name="name">view_product_template_form_publisher</field>
+        <record id="product_template_cost_history_menubutton_action" model="ir.actions.act_window">
+            <field name="name">Products Cost History</field>
+            <field name="res_model">product.cost.history</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record id="product_normal_form_view_cost_history_button" model="ir.ui.view">
+            <field name="name">product_normal_form_view_cost_history_button</field>
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
@@ -23,5 +30,9 @@
                 </data>
             </field>
         </record>
+
+        <menuitem id="menu_purchase_product_price_history"
+            action="product_template_cost_history_menubutton_action" parent="purchase.menu_procurement_management"
+            sequence="22"/>
     </data>
-</odoo>
+</openerp>

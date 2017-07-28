@@ -8,7 +8,7 @@ _logger = logging.getLogger(__name__)
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    cost_history_count = fields.Integer(string="Production Line Count", compute='_compute_cost_history_count')
+    cost_history_count = fields.Integer(string="Cost History Count", compute='_compute_cost_history_count')
 
     @api.one
     def _compute_cost_history_count(self):
