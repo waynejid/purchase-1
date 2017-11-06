@@ -17,9 +17,12 @@
     'website': "http://www.abakusitsolutions.eu",
 
     'category': 'Sale',
-    'version': '9.0.1.0',
+    'version': '10.0.1.0',
 
-    'depends': ['base', 'sale'],
+    'depends': [
+        'base',
+        'sale'
+    ],
 
     'data': [
         'views/product_price_history.xml',
