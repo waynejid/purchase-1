@@ -17,9 +17,12 @@
     'website': "http://www.abakusitsolutions.eu",
 
     'category': 'Product',
-    'version': '9.0.1.0',
+    'version': '10.0.1.0',
 
-    'depends': ['base', 'purchase'],
+    'depends': [
+        'base',
+        'purchase'
+    ],
 
     'data': [
         'views/product_template.xml',
