@@ -31,6 +31,19 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="product_normal_form_view_price_history_last_update">
+            <field name="name">product_normal_form_view_price_history_last_update</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='standard_price_uom']" position="inside">
+                    <label string="(last update: " />
+                    <field name="cost_price_last_update_text" class="oe_inline"/>
+                    <label string=")" />
+                </xpath>
+            </field>
+        </record>
+
         <menuitem id="menu_purchase_product_price_history"
             action="product_normal_form_view_price_history_menu_button_action" parent="purchase.menu_procurement_management"
             sequence="22"/>
