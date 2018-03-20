@@ -13,4 +13,4 @@ class ResPartner(models.Model):
     
     @api.one
     def _compute_vendor_products_count(self):
-        self.vendor_products_count = len(self.env['product.product'].search([('seller_ids.name', '=', self.id)]))
+        self.vendor_products_count = len(self.env['product.template'].search([('seller_ids.name', '=', self.id)]))
