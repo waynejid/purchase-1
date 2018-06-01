@@ -1,5 +1,5 @@
 ﻿{
-    'name': "Purchase Order Improvements",
+    'name': "Purchase Order Supplier Reference Required",
     'version': '9.0.1.0',
     'depends': ['purchase',],
     'author': "Bernard DELHEZ, AbAKUS it-solutions SARL",
