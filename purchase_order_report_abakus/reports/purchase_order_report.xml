@@ -230,13 +230,14 @@
                                         <span t-field="l.name"/>
                                     </td>
                                     <td class="text-right">
+                                        <span t-field="l.product_qty"/>
                                         <span t-field="l.product_uom"/>
                                     </td>
                                     <td class="text-right">
-                                        <span t-field="l.price_unit" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.pricelist_id.currency_id&quot;}"/>
+                                        <span t-field="l.price_unit" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;l.currency_id&quot;}"/>
                                     </td>
                                     <td class="text-right">
-                                        <span t-field="l.price_subtotal" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.pricelist_id.currency_id&quot;}"/>
+                                        <span t-field="l.price_subtotal" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;l.currency_id&quot;}"/>
                                     </td>
                                 </tr>
                             </t>
