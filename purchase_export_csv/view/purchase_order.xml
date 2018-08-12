@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-        <record model="ir.ui.view" id="purchase_order_form_export_csv">
-            <field name="name">purchase.order.form.export_csv</field>
-            <field name="model">purchase.order</field>
-            <field name="inherit_id" ref="purchase.purchase_order_form"/>
-            <field name="arch" type="xml">
-                <notebook>
-                    <page string="Export" groups="base.group_hr_user">
-                        <field class="oe_inline" name="export_csv"/>
-                        <group>
-                            <button name="create_export_csv" type="object" string="Compute CSV"/>
-                        </group>
-                    </page>
-                </notebook>
-            </field>
-        </record>
-    </data>
-</openerp>
+<odoo>
+    <record model="ir.ui.view" id="purchase_order_form_export_csv">
+        <field name="name">purchase.order.form.export_csv</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <notebook>
+                <page string="Export" groups="base.group_hr_user">
+                    <field class="oe_inline" name="export_csv"/>
+                    <group>
+                        <button name="create_export_csv" type="object" string="Compute CSV"/>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
