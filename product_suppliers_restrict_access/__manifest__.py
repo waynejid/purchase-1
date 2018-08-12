@@ -1,29 +1,16 @@
 # -*- coding: utf-8 -*-
+# (c) AbAKUS IT Solutions
 {
     'name': "Product Suppliers Edit Restrict to Non Managers",
-
-    'summary': """
-    """,
-
-    'description': """
-        Product Suppliers Edit Restrict to Non Managers
-
-        This modules makes the supplier list of the products non editable for non Purchase-Managers.
-        
-        This module has been developed by Valentin THIRION @ AbAKUS it-solutions.
-    """,
-
-    'author': "Valentin THIRION, AbAKUS it-solutions SARL",
+    'version': '10.0.1.0.0',
+    'author': "AbAKUS it-solutions SARL",
+    'license': 'AGPL-3',
     'website': "http://www.abakusitsolutions.eu",
-
-    'category': 'Purchase',
-    'version': '10.0.1.0',
-
     'depends': [
         'purchase',
         'sale'
     ],
-
+    'category': 'Purchase',
     'data': [
         'views/product_template.xml',
     ],
