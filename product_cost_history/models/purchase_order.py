@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-
+# (c) AbAKUS IT Solutions
+import logging
 from odoo import models, fields, api, exceptions, _
 
-import logging
 _logger = logging.getLogger(__name__)
+
 
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
@@ -22,7 +23,8 @@ class PurchaseOrder(models.Model):
         for order in self:
             if order.id in order_ids and order.state in ['purchase']:
                 for line in order.order_line:
-                    cost_id = self.env['product.cost.history'].search([('product_id', '=', line.product_id.id)], order="create_date desc", limit=1)
+                    cost_id = self.env['product.cost.history'].search([('product_id', '=', line.product_id.id)],
+                                                                      order="create_date desc", limit=1)
 
                     if not cost_id or cost_id.cost != line.price_unit:
                         self.env['product.cost.history'].create({

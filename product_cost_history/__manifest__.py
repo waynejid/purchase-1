@@ -1,29 +1,16 @@
 # -*- coding: utf-8 -*-
+# (c) AbAKUS IT Solutions
 {
     'name': "Product Cost History",
-
-    'summary': """
-    """,
-
-    'description': """
-        Product Cost History
-        
-        Adds cost history to products, an history line is added when a purchase is confirmed
-        
-        This module has been developed by Jason PINDAT, intern @ AbAKUS it-solutions.
-    """,
-
-    'author': "Jason PINDAT, AbAKUS it-solutions SARL",
+    'version': '10.0.1.0.0',
+    'author': "AbAKUS it-solutions SARL",
+    'license': 'AGPL-3',
     'website': "http://www.abakusitsolutions.eu",
-
-    'category': 'Product',
-    'version': '10.0.1.0',
-
     'depends': [
         'base',
         'purchase'
     ],
-
+    'category': 'Product',
     'data': [
         'views/product_template.xml',
         'views/product_cost_history.xml',
