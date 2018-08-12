@@ -1,5 +1,5 @@
 =====================================
-   Business Unit for Purchase
+   Purchase Order Report for AbAKUS
 =====================================
 
 This package is the an add on to ``purchase``.
