@@ -8,7 +8,7 @@ _logger = logging.getLogger(__name__)
 class PurchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'
 
-    has_photo = fields.Boolean(default=True)
+    has_photo = fields.Boolean(default=False)
 
     @api.multi
     def _prepare_stock_moves(self, picking):

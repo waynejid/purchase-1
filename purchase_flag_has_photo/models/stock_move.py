@@ -8,4 +8,4 @@ _logger = logging.getLogger(__name__)
 class StockMove(models.Model):
     _inherit = "stock.move"
 
-    has_photo = fields.Boolean(default=True)
+    has_photo = fields.Boolean(default=False)
