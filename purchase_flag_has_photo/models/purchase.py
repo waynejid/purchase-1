@@ -12,7 +12,7 @@ class PurchaseOrderLine(models.Model):
 
     @api.multi
     def _prepare_stock_moves(self, picking):
-        res = self.super(PurchaseOrderLine, self)._prepare_stock_moves(picking)
+        res = super(PurchaseOrderLine, self)._prepare_stock_moves(picking)
         if len(res) > 0:
             res[0]['has_photo'] = self.has_photo
         return res
