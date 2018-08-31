@@ -8,8 +8,9 @@
             <field name="priority">15</field>
             <field name="arch" type="xml">
                 <data>
-                    <xpath expr="//field[@name='seller_ids']" position="replace">
-                        <field name="seller_ids" context="{'default_product_tmpl_id': context.get('product_tmpl_id', active_id)}" group="sales_team.group_sale_manager" attrs="{'readonly':True}" />
+                    <xpath expr="//field[@name='seller_ids']" position="attributes">
+                        <attribute name="group">sales_team.group_sale_manager</attribute>
+                        <attribute name="readonly">True</attribute>
                     </xpath>
                 </data>
             </field>
