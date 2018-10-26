@@ -213,7 +213,6 @@
                     <table class="purchase_table" width="100%">
                         <thead>
                             <tr>
-                                <th width="75px"></th>
                                 <th class="text-left">Description</th>
                                 <th width="75px" class="text-right">Quantity</th>
                                 <th width="100px" class="text-right">Price</th>
@@ -223,9 +222,6 @@
                         <tbody class="sale_lines_body">
                             <t t-foreach="o.order_line" t-as="l">
                                 <tr t-if="l.product_uom">
-                                    <td>
-                                        <span t-field="l.product_id.image_small" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;} "/>
-                                    </td>
                                     <td>
                                         <span t-field="l.name"/>
                                     </td>
