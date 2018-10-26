@@ -136,20 +136,20 @@
                                 <tr>
                                     <td>
                                         <!-- Date -->
-                                        <t t-if="o.state in ['draft','sent']">
+                                        <t t-if="o.state in ['draft','sent','to_approve']">
                                             <strong>RFQ Date:</strong><br />
                                         </t>
-                                        <t t-if="o.state in ['sale','done']">
+                                        <t t-if="o.state in ['purchase','done']">
                                             <strong>PO Date:</strong><br />
                                         </t>
                                     </td>
                                     <td>
                                         <!-- Date -->
-                                        <t t-if="o.state in ['draft','sent']">
+                                        <t t-if="o.state in ['draft','sent','to_approve']">
                                             <span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}" /> <br />
                                         </t>
-                                        <t t-if="o.state in ['sale','done']">
-                                            <span t-field="o.date_approved" t-field-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}" /> <br />
+                                        <t t-if="o.state in ['purchase','done']">
+                                            <span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}" /> <br />
                                         </t>
                                     </td>
                                 </tr>
