@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
-
+# (c) AbAKUS IT Solutions
 from . import product_template
