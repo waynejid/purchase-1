@@ -4,7 +4,7 @@
     <!-- PURCHASE ORDER TITLE (Inherit from External Layout) -->
     <template id="purchase_order_title_report_improved" inherit_id="report.external_layout_header">
         <xpath expr="//div[@class='row'][last()]" position="inside">
-            <t t-if="'purchase.order' in str(o._model)">
+            <t t-if="'purchase.order' in str(doc_model)">
                 <style type="text/css">
                     h1 {
                     color: #F68B19;
@@ -135,26 +135,20 @@
                             <tr>
                                 <td>
                                     <!-- Date -->
-                                    <t t-if="o.state in ['draft','sent']">
-                                        <strong>RFQ Date:</strong>
-                                        <br/>
+                                    <t t-if="o.state in ['draft','sent','to_approve']">
+                                        <strong>RFQ Date:</strong><br />
                                     </t>
-                                    <t t-if="o.state in ['sale','done']">
-                                        <strong>PO Date:</strong>
-                                        <br/>
+                                    <t t-if="o.state in ['purchase','done']">
+                                        <strong>PO Date:</strong><br />
                                     </t>
                                 </td>
                                 <td>
                                     <!-- Date -->
-                                    <t t-if="o.state in ['draft','sent']">
-                                        <span t-field="o.date_order"
-                                              t-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}"/>
-                                        <br/>
+                                    <t t-if="o.state in ['draft','sent','to_approve']">
+                                        <span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}" /> <br />
                                     </t>
-                                    <t t-if="o.state in ['sale','done']">
-                                        <span t-field="o.date_approved"
-                                              t-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}"/>
-                                        <br/>
+                                    <t t-if="o.state in ['purchase','done']">
+                                        <span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}" /> <br />
                                     </t>
                                 </td>
                             </tr>
@@ -283,7 +277,7 @@
                                 <td class="text-right">
                                     <strong>
                                         <span t-field="o.amount_untaxed"
-                                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.pricelist_id.currency_id&quot;}"/>
+                                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/>
                                     </strong>
                                 </td>
                             </tr>
@@ -291,7 +285,7 @@
                                 <td>Taxes</td>
                                 <td class="text-right">
                                     <span t-field="o.amount_tax"
-                                          t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.pricelist_id.currency_id&quot;}"/>
+                                          t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/>
                                 </td>
                             </tr>
                             <tr class="border-top-orange">
@@ -301,7 +295,7 @@
                                 <td class="text-right">
                                     <strong>
                                         <span t-field="o.amount_total"
-                                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.pricelist_id.currency_id&quot;}"/>
+                                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/>
                                     </strong>
                                 </td>
                             </tr>
