@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api, exceptions, _
+from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
+import datetime
+import pytz
 import logging
 _logger = logging.getLogger(__name__)
     
@@ -22,5 +25,8 @@ class ProductTemplate(models.Model):
         if len(history_ids) == 0:
             self.cost_price_last_update_text = str("Never")
         else:
-            self.cost_price_last_update_text = str(history_ids.datetime)
+            last_update = history_ids.datetime
+            local_tz = pytz.timezone(self.env.user.tz)
+            d = pytz.utc.localize(datetime.datetime.strptime(history_ids.datetime, DEFAULT_SERVER_DATETIME_FORMAT)).astimezone(local_tz)
+            self.cost_price_last_update_text = str(datetime.datetime.strftime(d, '%Y-%m-%d %H:%M:%S'))
         
